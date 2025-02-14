@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JobVenture - Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">JobVenture</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <section class="contact-banner">
+      <h1>Contact JobVenture</h1>
+      <p>We are here to help! Whether you have questions, suggestions, or need support, feel free to reach out to us. We look forward to hearing from you.</p>
+    </section>
+
+    <section class="contact-details">
+      <div class="contact-info">
+        <h2>Our Office</h2>
+        <p><i class="material-icons">location_on</i> 123 Blue Street, Tech City, Country</p>
+        <p><i class="material-icons">phone</i> +1 (123) 456-7890</p>
+        <p><i class="material-icons">email</i> support@jobventure.com</p>
+        <p>Feel free to visit our office during business hours (Mon-Fri, 9am-5pm) for any in-person assistance.</p>
+      </div>
+      <div class="contact-form-container">
+        <h2>Get in Touch</h2>
+        <form action="https://formspree.io/f/xgvoneob" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="_replyto" required placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit"><i class="material-icons">send</i> Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 JobVenture. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

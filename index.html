@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobVenture - Home</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">JobVenture</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Search & Filters Section -->
+    <section class="search-section">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search jobs, keywords, or companies" />
+        <button id="searchBtn"><i class="material-icons">search</i></button>
+      </div>
+      <div class="filters">
+        <!-- Location Filter as Dropdown -->
+        <div class="filter-item">
+          <i class="material-icons">location_on</i>
+          <select id="locationFilter">
+            <option value="">Any Location</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">UK</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+          </select>
+        </div>
+        <!-- Job Type Filter -->
+        <div class="filter-item">
+          <i class="material-icons">work</i>
+          <select id="jobTypeFilter">
+            <option value="Any">Any Type</option>
+            <option value="FULLTIME">Full Time</option>
+            <option value="PARTTIME">Part Time</option>
+            <option value="CONTRACTOR">Contract</option>
+            <option value="INTERN">Intern</option>
+          </select>
+        </div>
+        <!-- Date Filter -->
+        <div class="filter-item">
+          <i class="material-icons">date_range</i>
+          <select id="dateFilter">
+            <option value="all">Any Time</option>
+            <option value="today">Today</option>
+            <option value="3days">Last 3 Days</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading" style="display: none;">Loading...</div>
+
+    <!-- Job Listings -->
+    <section id="jobListings" class="job-listings">
+      <!-- Job cards will be inserted here by script.js -->
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 JobVenture. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
