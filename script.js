@@ -6,29 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const dateFilter = document.getElementById("dateFilter");
   const jobListings = document.getElementById("jobListings");
   const loading = document.getElementById("loading");
-
-  // Default search term if none provided
   const defaultQuery = "developer";
-
-  // Function to fetch jobs from API
+  
   async function fetchJobs() {
-    // Show loading spinner
     loading.style.display = "block";
     jobListings.innerHTML = "";
 
-    // Build the query string
     let query = searchInput.value.trim() || defaultQuery;
     const locationVal = locationFilter.value;
     if (locationVal) {
       query += " in " + locationVal;
     }
-    // If a specific job type is chosen, append it
     const jobTypeVal = jobTypeFilter.value;
     if (jobTypeVal && jobTypeVal !== "Any") {
       query += " " + jobTypeVal.toLowerCase();
     }
-    
-    // Build the URL parameters
     const baseUrl = "https://jsearch.p.rapidapi.com/search";
     const urlParams = new URLSearchParams({
       query: query,
@@ -58,7 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(url, options);
       const data = await response.json();
       const jobs = data.data || data;
-      // Cache the fetched jobs for later use
       localStorage.setItem("cachedJobs", JSON.stringify(jobs));
       displayJobs(jobs);
     } catch (error) {
@@ -66,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
       jobListings.innerHTML =
         "<p>Error fetching jobs. Please try again later.</p>";
     } finally {
-      // Hide loading spinner
       loading.style.display = "none";
     }
   }
@@ -97,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // When the page loads, check if we have cached results and display them.
   const cachedJobs = localStorage.getItem("cachedJobs");
   if (cachedJobs) {
     displayJobs(JSON.parse(cachedJobs));
@@ -105,7 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchJobs();
   }
 
-  // Event listeners
   searchBtn.addEventListener("click", fetchJobs);
   searchInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
